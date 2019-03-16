@@ -1,77 +1,42 @@
-# json-serial-bridge
+This application uses a speech recognition JavaScript library, Annyang (https://www.talater.com/annyang/), to send json strings to an arduino through a form. These commands control the on board led light (could add an auxiliary), where commands such as turn off and on (as of now) can be sent to it.
 
-This demonstrates bidirectional communication between an Arduino sketch and Javascript running in the browser. JSON is used as the data format.
+Usage:
 
-# Architecture
+1. Clone/download package
 
-Three components are needed.
+Connect arduino, and upload code.
 
-1. An Arduino sketch that sends/receives via serial. A example is included.
-2. A Node.js app connects to the computer's serial port
-3. Browser code that receives data from the Node.js process and does something with the data
+2. Run:
 
-Because the browser is decoupled from the serial port, it's possible to load the same web app on a mobile device and work with the data too. The Node.js app does however need to run on the computer you've connected the microcontroller to.
+npm install
 
-## Setup: Arduino
+in the dictionary (json-serial-bridge)
 
-1. Install [ArduinoJson](https://arduinojson.org) according to its instructions. We've tested using version 5.13.2 of the library
-2. Upload _Arduino\Arduino.ino_ to your Arduino
+possibly must run npm install windows-build-tools in an in an Admin command prompt, in the case of an error.
 
-To test the Arduino part works, open the serial monitor and ensure that you're getting occasional data from the Arduino. Once satisfied, close the monitor so the port is available again. If you're getting gibberish, double check to make sure the baud rate of the serial monitor is 115,200 (set in the Arduino sketch).
+3. To test, start the Node.js sketch: node app.js.
+On Windows this might be similar to:
 
-The sketch assumes a LED on pin 13 and an analog input on pin 0.
+node app.js --serial com5 bridge
 
-Afterwards, you'll want to adapt the example Arduino sketch to interact with the inputs/outputs you have connected. It also makes sense to do some operations on the microcontroller itself, especially when latency is a concern.
+or on a Mac:
 
-## Setup: computer
+node app.js --serial /dev/tty.usbmodem1411 bridge
 
-In the directory you've got this sample:
+Open up http://localhost:4000. This will allow you to send commands to the Node.js server. NOTE: Microphone must be connected and allowed by the browser to record.
 
-Run `npm install`
+4. Send voice commands to the Arduino. The commands, as of now, are:
 
-On Windows you might need to also run the following in an Admin command prompt:
+Lights off (set the state to turn off the light)
 
-```
-npm install windows-build-tools
-```
+Lights on (set the state to turn on the light)
 
-And instead of plain `npm install` as shown above, use:
+Confirm. (confirm action)
 
-```
-npm install --msvs_version=2015
-```
+e.g "lights on" ... "confirm".
 
-To test, start the Node.js sketch: `node app.js`. Since you didn't specify which serial port represents the Arduino, you'll get a list of ports displayed. Once you identify the right port, run it again with the port. 
+------
 
-On Windows this might be something like:
+Credits to Annayang creator and Clint Heyer for the Json-Serial-Bridge example.
 
- `node app.js --serial com5 bridge`
- 
- or on a Mac:
-
-`node app.js --serial /dev/tty.usbmodem1411 bridge`
-
-The port name is the same or similar to what shows up in the Arduino IDE.
-
-Once running, the program doesn't show the data flowing back and forth. Add the `--debug` option if you want that.
-
-The next step is to test whether the data can be accessed in the browser. Open up `http://localhost:4000`. This will allow you to send commands to the Node.js server, which in turn forwards it to the Arduino. Likewise, messages sent by the Arduino are displayed in the web page.
-
-The existing script is set up to blink the on-board LED according to the JSON sent. Eg, `{"blink":10}` blinks the LED 10 times. The Arduino continually sends readings from an analog line, reporting it as: `{"a0":<val>}`.
-
-# Next
-
-The demo shows a simple way to have bidirectional data from the browser through to Arudino. Be smart about where you put the logic. Sometimes you want the computer sending commands which end up running some a lengthy function on the microprocessor. This is great when you need tight control over components connected to the board. Other times you'd rather treat the Arudino as a 'dumb' object which just sets analog/digital values it is told to via serial. This can be useful for complex behaviours that are intertwined with more complex interactions or data. The downside is additional latency of communication.
-
-Remember to update the size of the Json buffer in the Arduino code if you change what data is sent to/from the browser. Use the [ArduinoJson Assistant](https://arduinojson.org/v5/assistant/) for this.
-
-# Read more
-
-More on:
-
-- [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_client_applications)
-- [ArduinoJson](https://arduinojson.org/)
-
-This sample includes:
-
-- [reconnecting-websocket](https://github.com/pladaria/reconnecting-websocket) wrapper (v3.2.2)
+Code by Jovan

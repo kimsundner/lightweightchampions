@@ -6,10 +6,13 @@ if (annyang) {
   // Functions which the commands will execute once recognized.
   var lightsOff = function() {
     console.log("Lights off")
-    
+    document.getElementById("sendtoSerial").value = "{\off\:1}"
+    document.getElementById("sendtoSerial").submit();
   };
   var lightsOn = function() {
     console.log("Lights on")
+    document.getElementById("sendtoSerial").value = "{\on\:1}"
+    document.getElementById("sendtoSerial").submit();
   };
   
   // Define commands.
