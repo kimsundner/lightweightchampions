@@ -47,3 +47,9 @@ function onDocumentReady() {
     socket.send(send);
   });
 }
+
+
+/*
+Code from Clint Heyer's Interactivity (https://github.com/ClintH/interactivity)
+Used as a base for the webserver and json-serial-bridge.
+*/

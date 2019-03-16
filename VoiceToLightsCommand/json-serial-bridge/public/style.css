@@ -33,3 +33,8 @@ a:hover {
   border: 1px solid black;
   background: white;
 }
+
+/*
+Code from Clint Heyer's Interactivity (https://github.com/ClintH/interactivity)
+Used as a base for the webserver and json-serial-bridge.
+*/
