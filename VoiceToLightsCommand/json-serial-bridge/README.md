@@ -1,4 +1,4 @@
-This application uses a speech recognition JavaScript library, Annyang (https://www.talater.com/annyang/), to send json strings to an arduino through a form. These commands control the on board led light (could add an auxiliary), where commands such as turn off and on (as of now) can be sent to it.
+This application uses a speech recognition JavaScript library, Annyang (https://www.talater.com/annyang/), to send json strings to an arduino through a form. These commands control the on board led light (could add an auxiliary), where commands such as turn off and on (as of now) can be sent to it. WIP
 
 Usage:
 
