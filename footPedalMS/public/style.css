@@ -1,0 +1,38 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  background-color: whitesmoke;
+  text-align: center;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+p{
+  color: #FFC300; 
+}
+
+h1 {
+  color: #FCD878;
+}
+a, a:link, a:visited {
+  color: black;
+}
+a:hover {
+  color: black;
+}
+
+#last>table {
+  border: 1px solid gray;
+}
+#last td {
+  width: 5rem;
+}
+#last.frozen {
+  background-color: lightblue;
+}
