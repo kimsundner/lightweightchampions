@@ -1,0 +1,42 @@
+:Author: korneliapapp
+:Email: pappkornelia@outlook.com
+:Date: 20/03/2019
+:Revision: version#4
+:License: Public Domain
+
+= Project: lightweightchampions/footPedal_arduino
+
+Describe your project
+
+== Step 1: Installation
+For example:
+
+1. Download this file
+2. Beside "New Sketch", import this file to the Online or Offline Arduino CC editor 
+
+== Step 2: Assemble the circuit
+
+Assemble the circuit following the diagram circuit.jpg attached to the sketch
+
+== Step 3: Load the code
+
+Upload the code contained in this sketch onto your board
+
+=== Folder structure
+
+....
+ FootPedalArduino               => Arduino sketch folder
+  ├── footPedal_sketch.ino       => main Arduino file
+  ├── circuit.jpg      => an image of the layout
+  └── ReadMe.adoc         => this file
+....
+
+
+=== Contributing
+To contribute to this project please contact korneliapapp https://id.arduino.cc/korneliapapp
+
+
+=== Help
+This document is written in the _AsciiDoc_ format, a markup language to describe documents.
+If you need help you can search the http://www.methods.co.nz/asciidoc[AsciiDoc homepage]
+or consult the http://powerman.name/doc/asciidoc[AsciiDoc cheatsheet]
