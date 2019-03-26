@@ -1,7 +1,7 @@
 /*
 footPedal_sketch uses an input device (a footpedal) to trigger changes on the neo pixels (light).
 This is a demonstration on how to use an input device to trigger changes on neo pixels.
-Partial credit from Adafruit_Neopixel
+Partial credit given to Adafruit_Neopixel library's button_control_light tutorial
 @author Kornelia Papp
 @date 032519
 */
@@ -55,7 +55,7 @@ void loop() {
 oldState = newState;
 
 }
-
+// Cases that switch state of NeoPixels per button press
 void startShow(int i) {
   switch(i){
     case 0: colorWipe(pixels.Color(0, 0, 0), 50);    // Black/off
