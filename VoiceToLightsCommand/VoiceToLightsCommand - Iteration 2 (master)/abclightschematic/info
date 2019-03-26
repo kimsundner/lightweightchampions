@@ -1,0 +1,5 @@
+Simple schematic showing the a b c light wiring for a micro arduino. 
+
+Needed: Three resistors, four wires, breadboard, minimum three led lights. Connect to pin 2, 3 and 4. Fourth wire, in this case white wire, to ground. Connect LED lights as usual.
+
+/Jovan
