@@ -4,6 +4,8 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
+
+/*Styling of body(whole window*/
 body {
   background-color: whitesmoke;
   text-align: center;
@@ -13,9 +15,11 @@ body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
+/*Styling of text under header*/
 p{
   color: #FFC300; 
 }
+/*Styling of header*/
 
 h1 {
   color: #FCD878;
