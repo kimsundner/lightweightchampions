@@ -1,9 +1,12 @@
+// Variables in global scope
 var socket = null;
 var frozen = false;
 
+// Variable document states 
 if (document.readyState != 'loading') ready();
 else document.addEventListener('DOMContentLoaded', ready);
 
+// If this function is called, screen unfreezes, vice versa if screen not pressed
 function ready() {
   
   document.getElementById('last').addEventListener('click', e=> {
@@ -18,41 +21,49 @@ function ready() {
 
 
 function onData(e) {
+  //Variable for acceleration, not used 
   var accel = e.accel;
+
+  // Variable for acceleration of gravity, not used 
   var accelGrav = e.accelGrav;
+
+  //Variable for rotation, using gamma
   var rot = e.rot;
-  
-  //console.log(rot.alpha);
+
+  // Check
+  //console.log(rot.gamma);
   addedFunctionality(e);
 
+  // Commented out the calling of the function showData because we're not using it
   //if (!frozen) showData(e);
-
 }
 
+  // Created new function that targets the gamma rotation from the motion-stream tutorial and calls the colourPick function
 function addedFunctionality(e){
   colourPick(e.rot.gamma); 
-  // if (e.rot.gamma > 0 && e.rot.gamma < 30)
-  //   console.log("We did it!");
+  
 }
 
-function rainbow(n) {
+// Function for dimming/changing colour on document
+function dimIt(n) {
   let c;
-  //scale down the min and max value to a usable value for the minor rotation the foot pedal will create
+  // Scale down the min and max value to a usable value for the minor rotation the foot pedal will create
   let u = scale(n, 0, 10, 0, 100); 
  
 
   c = 'hsl(0, 0%, ' + u + '%)';
-
+  // Check
   console.log(u);
   return c;
 }
 
+// Changing color of body of whole document 
 function colourPick(i) {
-  document.body.style.background = rainbow(i);
+  document.body.style.background = dimIt(i);
 }
 
 
-//added function for scaling (map() in arduino) values
+// Added a function for scaling (map() in Arduino) values
 const scale = (num, in_min, in_max, out_min, out_max) => {
   return (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
@@ -76,6 +87,8 @@ function initWebsocket() {
 
 }
 
+// Will not use this function because have removed the display from index.html 
+/*
 function showData(m) {
   let html = 'accel';
   html += '<table><tr><td>' + m.accel.x.toFixed(3) + '</td><td>' + m.accel.y.toFixed(3) + '</td><td>' + m.accel.z.toFixed(3) + '</tr></table>';
@@ -92,5 +105,4 @@ function showData(m) {
   html += '</table>';
   document.getElementById('last').innerHTML = html;
 }
-
-//heeeeey
+*/
