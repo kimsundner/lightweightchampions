@@ -47,6 +47,7 @@ function processData() {
   window.requestAnimationFrame(processData);
 }
 
+  // Mobile version I didn't change much from Clint's tutorial, still displays original screen with data showing 
 function showData(m) {
   try {
     let html = 'accel';

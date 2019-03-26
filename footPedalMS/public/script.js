@@ -68,7 +68,7 @@ const scale = (num, in_min, in_max, out_min, out_max) => {
   return (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
 
-
+// Sending data between mobile device and localhost
 function initWebsocket() {
   const url = 'ws://' + location.host + '/ws';
   socket = new ReconnectingWebsocket(url);
