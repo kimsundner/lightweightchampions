@@ -26,7 +26,7 @@ function onDocumentReady() {
                 return;          
             }
         }
-        // runs the function that reads the value of the potentiometer 
+        // runs the function that reads the value of the potentiometer (new function)
         addedFunctionality(lastMsg, evt.data);
     }
     socket.onopen = function(evt) {
@@ -39,7 +39,7 @@ function onDocumentReady() {
         socket.send(send);  
     })
 }
-// hsl color scale
+// hsl color scale (new function)
 function rainbow(data) {
     let c;
     //maps the values from arduino to 0-100 because of hsl scale.  
@@ -50,17 +50,17 @@ function rainbow(data) {
     console.log(u);
     return c;
 }
-// changes the color of the body's background 
+// changes the color of the body's background (new function)
 function colourPick(data) {
     document.body.style.background = rainbow(data);
 }
-// reads the value and calls on the colourPick function 
+// reads the value and calls on the colourPick function (new function)
 function addedFunctionality(msg, data){
     //console.log(msg);
     colourPick(data);
 }
 
-//added function for scaling arduino values
+//added function for scaling arduino values (new function)
 const scale = (num, in_min, in_max, out_min, out_max) => {
     return (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
   }
