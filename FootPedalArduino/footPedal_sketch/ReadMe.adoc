@@ -6,17 +6,17 @@
 
 = Project: lightweightchampions/footPedal_arduino
 
-Describe your project
+footPedal_sketch uses an input device (a foot pedal) to trigger changes on the neo pixels (light).
+This is a demonstration on how to use an input device to trigger changes on neo pixels.
 
 == Step 1: Installation
-For example:
 
 1. Download this file
 2. Beside "New Sketch", import this file to the Online or Offline Arduino CC editor 
 
 == Step 2: Assemble the circuit
 
-Assemble the circuit following the diagram circuit.jpg attached to the sketch
+Assemble the circuit following the diagram circuit.jpg attached in the same folder
 
 == Step 3: Load the code
 
