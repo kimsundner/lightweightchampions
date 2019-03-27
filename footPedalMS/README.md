@@ -9,7 +9,7 @@ After you have cloned the package, pinpoint it's location, cd to the location of
 
 `$ npm install`
 
-eg: kornelias-air:~ kornelia_papp$ cd /Users/kornelia_papp/Documents/lightweightchampions/footPedalMS npm install
+> eg: kornelias-air:~ kornelia_papp$ cd /Users/kornelia_papp/Documents/lightweightchampions/footPedalMS npm install
 
 This will install the necessary package from npm.
 
@@ -19,11 +19,11 @@ Once you have set this up, you can boot up your server by keying in
 
 `$ npm start`
 
-eg: kornelias-air:footPedalMS kornelia_papp$ npm start
+> eg: kornelias-air:footPedalMS kornelia_papp$ npm start
 > websockets-skeleton@0.0.1 start /Users/kornelia_papp/Documents/lightweightchampions/footPedalMS
 > node server.js
 
-Webserver started on 8080
+> Webserver started on 8080
 
 Once the webserver starts, key in ` http://localhost:8080/` on your web browser, and key in your `wifi IP address: 8080` on your mobile server. Now they will communicate with each other and as your footpedal gets oriented in the gamma rotation, the lights on webpage will be manipulated.
 
