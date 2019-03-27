@@ -10,7 +10,7 @@ We have one example with a elbow switch that uses arduino code to turns on/off l
 
 We have two examples of foot pedals, one example that only uses arduino code and one that uses motion stream. The arduino example changes between four different colors of led lights connected to the arduino, using four different four cases. The motions stream example displays the simulation of dimming of the light in the browser through the server. As the pedal detects changes in the gamma rotations is starts to dim the screen from white to black. 
 
-We have one example that controls the hue as well as the brightness of the hue in arduino code. We have four leds connnected to arduino that uses the neo-pixel library connected to two potentiometers, one controlling the brightness of the hue and one that controls the hue. 
+We have one example that controls the hue as well as the brightness of the hue in arduino code. We have four leds connnected to arduino that uses the Adafruit Neo-pixel library connected to two potentiometers, one controlling the brightness of the hue and one that controls the hue. 
 
 We have one example that uses voice commands to control the led light connected to the arduino. The examples uses an speech recognition API called Annyang. It works with commands like, "lights on/off" to turn on the led. 
 
