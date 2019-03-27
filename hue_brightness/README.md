@@ -6,4 +6,4 @@ We used four neopixel leds that takes the value of two potentiometers, for the b
 This code was taken and iterated upon from: 
 https://github.com/adafruit/Adafruit_NeoPixel/blob/master/examples/buttoncycler/buttoncycler.ino
 
-Collaborators of this example, Kim Sunder and Aziza Bahaviddinova.
+Collaborators of this example, Kim Sundnér, Aziza Bahaviddinova.
