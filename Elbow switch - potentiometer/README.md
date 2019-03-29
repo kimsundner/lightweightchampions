@@ -1,10 +1,16 @@
-# !! deprecated
+In this example we have a switch and a dimmer with a potentiometer for a elbow interaction. It has two arduino folders one for a switch that turns on/off that was taken from the eduIntro library that uses a button.
+And the second one that is used for the potentiometer(dimmer). It read the value of the potentiometer and maps it from 0-250, and prints it to the serial monitor. 
 
-This sample remains to demonstrate simple bidirectional communication, but consider  instead the `json-serial-bridge` sample. It uses a more robust way of piping data back and forth.
+We mainly made changes to the public folder within the serial bridge folder. Where we find the html, js and css files, all changes were made in the html and js file. In the html file we removed/commented out some of the preset features of the browser to suit our purposes, we wanted a clean body to show the color changes. There are four new functions made that read the value of the potentiometer and translates it into hsl color scheme that displays on the body's background. We also created a function for the value of the potentiometer not to go above 100 because we wanted the colors to go from white to black. We have declared a function that maps the value of the arduino from 0-250 to 0-100.  
 
-# ws-serial-bridge
 
-This demonstrates bidirectional communication between an Arduino sketch and Javascript running in the browser.
+
+Collaborators: Kim Sundnér, Aziza Bahaviddinova
+
+
+
+
+Intructions on how to set up serial bridge taken from the interactivity-master folder, written by Clint Heyer.
 
 # Architecture
 
@@ -27,18 +33,6 @@ In the directory you've got this sample:
 
 Hack away! Try making a simple command system so that a particular function runs on the Arduino when a certain command is sent from the browser, or making something happen in the browser based on a command sent from the Arduino.
 
-# Serial commands
-
-The Arduino sketch sends and receives commands in a simple string format:
-
-  <Text,Int,Float>
-
-Eg:
-  <Hello,1,10.5>
-
-Commas , are used to separate each of the three parts, and the whole thing is enclosed in angled brackets < >.
-
-This simple format means you can easily test using Arduino's serial monitor, or send commands from Javascript code.
 
 # Read more
 

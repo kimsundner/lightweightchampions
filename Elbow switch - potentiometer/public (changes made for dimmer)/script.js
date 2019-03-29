@@ -12,20 +12,7 @@ function onDocumentReady() {
     var lastMsg = null;
     lastMsgEl = document.getElementById('lastMsg');
     socket.onmessage = function(evt) {
-        // Debug: see raw received message
-        //console.log(evt.data);
-        
-        // if (evt.data > 1023/2) {
-        //     document.getElementById("body").style.backgroundColor = "#000000";
-
-        // };
-
-        // if (evt.data < 1023/2) {
-        //     document.getElementById("body").style.backgroundColor = "#ffffff";
-        // };
-
-
-        // Parse message, assuming <Text,Int,Float>
+       
         var d = evt.data.trim();
         if (d.charAt(0) == '<' && d.charAt(d.length-1) == '>') {
             // Looks legit
@@ -39,14 +26,7 @@ function onDocumentReady() {
                 return;          
             }
         }
-        
-        // Doesn't seem to be formatted correctly, just display as-is
-        // if (evt.data != lastMsg) {
-        //     lastMsgEl.innerText = evt.data;
-        //     lastMsg = evt.data;
-        // }
-
-        
+        // runs the function that reads the value of the potentiometer (new function)
         addedFunctionality(lastMsg, evt.data);
     }
     socket.onopen = function(evt) {
@@ -59,25 +39,28 @@ function onDocumentReady() {
         socket.send(send);  
     })
 }
-function rainbow(n) {
+// hsl color scale (new function)
+function rainbow(data) {
     let c;
-    let u = scale(n, 0, 250, 0, 100);
+    //maps the values from arduino to 0-100 because of hsl scale.  
+    let u = scale(data, 0, 250, 0, 100);
 
     c = 'hsl(0, 0%, ' + u + '%)';
 
     console.log(u);
     return c;
 }
-function colourPick(i) {
-    document.body.style.background = rainbow(i);
+// changes the color of the body's background (new function)
+function colourPick(data) {
+    document.body.style.background = rainbow(data);
 }
-
+// reads the value and calls on the colourPick function (new function)
 function addedFunctionality(msg, data){
     //console.log(msg);
     colourPick(data);
 }
 
-//added function for scaling (map() in arduino) values
+//added function for scaling arduino values (new function)
 const scale = (num, in_min, in_max, out_min, out_max) => {
     return (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
   }
